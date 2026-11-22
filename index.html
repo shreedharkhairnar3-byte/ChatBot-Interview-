@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f7f0">
+  <title>Interview Mate — Practice with confidence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Interview Mate home"><span class="brand-mark">IM</span><span>interview<span class="brand-light">mate</span></span></a>
+      <div class="side-label">WORKSPACE</div>
+      <button class="nav-item active" id="navPractice"><span>✦</span> Practice interview</button>
+      <button class="nav-item" id="navHistory"><span>◷</span> My sessions</button>
+      <div class="side-card">
+        <div class="side-card-icon">✧</div>
+        <strong>Small steps.<br>Big confidence.</strong>
+        <p>Every practice session brings you closer to your goal.</p>
+        <div class="mini-progress"><i></i></div>
+        <small>Keep your streak going</small>
+      </div>
+      <div class="sidebar-bottom"><span class="avatar">S</span><div><b>Student workspace</b><small>Practice account</small></div><span class="dots">•••</span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumb">Workspace <span>/</span> <b id="crumb">Practice</b></div>
+        <div class="top-actions"><span class="status-dot"></span><span class="top-status">All systems ready</span><button class="help-btn" id="helpBtn">? <span>Help</span></button></div>
+      </header>
+
+      <section id="homeView" class="view">
+        <div class="welcome-row">
+          <div><div class="eyebrow"><span class="spark">✦</span> YOUR PERSONAL INTERVIEW COACH</div><h1>Make your next<br><em>interview count.</em></h1><p class="intro">Build confidence, sharpen your answers, and get ready to make a great impression.</p></div>
+          <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-card"><div class="art-top"><span class="tiny-dot"></span><span class="tiny-dot"></span><span class="tiny-dot"></span></div><div class="art-avatar">✦</div><div class="art-lines"><i></i><i></i><i></i></div><div class="art-check">✓</div></div><div class="float-pill">✦ You’ve got this!</div></div>
+        </div>
+
+        <div class="section-heading"><div><h2>Choose your practice</h2><p>Pick a track to start your mock interview.</p></div><span class="duration">◷ &nbsp;10 questions · ~15 min</span></div>
+        <div class="role-grid">
+          <button class="role-card featured" data-role="cpp"><span class="role-icon code-icon">&lt;/&gt;</span><span class="tag">POPULAR</span><h3>C++ Developer</h3><p>Core C++, OOP concepts, memory, and problem-solving fundamentals.</p><span class="role-meta">10 questions <b>→</b></span></button>
+          <button class="role-card" data-role="fresher"><span class="role-icon people-icon">◎</span><h3>General Fresher</h3><p>HR questions, communication, teamwork, and first-job readiness.</p><span class="role-meta">10 questions <b>→</b></span></button>
+          <button class="role-card" data-role="python"><span class="role-icon python-icon">Py</span><h3>Python Developer</h3><p>Python basics, data structures, OOP, and debugging skills.</p><span class="role-meta">10 questions <b>→</b></span></button>
+        </div>
+        <div class="bottom-note"><span>✧</span><div><b>A little preparation goes a long way.</b><p>Speak clearly, use examples, and remember — this is a space to learn.</p></div></div>
+      </section>
+
+      <section id="chatView" class="view hidden">
+        <div class="chat-heading"><button class="back-btn" id="backHome">←</button><div><div class="eyebrow">MOCK INTERVIEW SESSION</div><h2 id="chatRoleTitle">C++ Developer</h2></div><span class="live-badge"><i></i> IN PROGRESS</span></div>
+        <div class="progress-panel"><div class="progress-top"><span id="progressLabel">Question 1 of 10</span><b id="progressPercent">10%</b></div><div class="progress-track"><i id="progressBar"></i></div></div>
+        <div class="chat-layout">
+          <div class="conversation">
+            <div class="chat-date">YOUR PRACTICE SESSION</div>
+            <div id="messages" class="messages"></div>
+            <form id="answerForm" class="answer-box"><textarea id="answerInput" rows="3" placeholder="Type your answer here... (Be clear and give an example)" required></textarea><div class="answer-bottom"><span>↵ &nbsp;Press Ctrl + Enter to send</span><button class="send-btn" type="submit">Send answer <b>↑</b></button></div></form>
+            <button class="skip-btn" id="skipBtn">Skip this question →</button>
+          </div>
+          <aside class="coach-panel"><div class="coach-icon">✧</div><h3>Coach’s corner</h3><p id="coachTip">Take a moment to think. A clear answer is better than a rushed one.</p><div class="coach-divider"></div><b>Quick reminders</b><ul><li>Keep your answer focused</li><li>Use a practical example</li><li>Explain your thought process</li></ul><div class="encourage">You’re doing great. Keep going! ✦</div></aside>
+        </div>
+      </section>
+
+      <section id="resultView" class="view hidden">
+        <div class="result-top"><div class="eyebrow">SESSION COMPLETE</div><h1>That’s a wrap.<br><em>Well practised!</em></h1><p>Your practice summary is ready. Every attempt is progress.</p></div>
+        <div class="result-card"><div class="score-ring" id="scoreRing"><div><strong id="scoreValue">0</strong><small>/ 100</small></div></div><div class="result-copy"><span class="tag">YOUR PRACTICE SCORE</span><h2 id="resultMessage">Great effort!</h2><p id="resultDescription">Review your feedback and keep building confidence.</p><div class="result-stats"><div><b id="answeredCount">0/10</b><small>Answered</small></div><div><b id="matchedCount">0</b><small>Concepts spotted</small></div><div><b>10</b><small>Total questions</small></div></div></div></div>
+        <div class="section-heading feedback-heading"><div><h2>Answer review</h2><p>Helpful pointers for your next attempt.</p></div><button class="outline-btn" id="downloadBtn">↓ &nbsp;Download report</button></div>
+        <div id="reviewList" class="review-list"></div>
+        <button class="primary-btn" id="newSessionBtn">Start another session <span>→</span></button>
+      </section>
+
+      <section id="historyView" class="view hidden">
+        <div class="eyebrow">YOUR PROGRESS</div><h1>My <em>sessions.</em></h1><p class="intro">Your recent practice sessions on this device.</p>
+        <div id="historyList" class="history-list"></div>
+        <button class="primary-btn" id="historyPractice">Start a practice session →</button>
+      </section>
+
+      <footer class="footer"><span>© 2026 Interview Mate</span><span>Made for learners, built for confidence <b>✦</b></span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
